@@ -84,7 +84,17 @@ async def start(client, message):
             text="**Please Join My Updates Channel to use this Bot!**",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
-            )
+            ) 
+        @Client.on_message(filters.command("availableserial"))
+async def availableserial(bot, message):
+    await message.reply_text(LIST)     
+ 
+AVAILABLESERIAL= """╭━━ Available Serial 😇━
+┣
+┣ Dhruv Tara ➺ 【✅ / ♾】
+┣ Shiv Shakti Shakti【07 / ♾】
+┣ 
+╰━@Entertainment_Official_Bot━━━━"""
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
