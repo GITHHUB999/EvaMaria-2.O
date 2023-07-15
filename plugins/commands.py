@@ -49,7 +49,16 @@ async def start(client, message):
             ],[
             InlineKeyboardButton('ℹ️ 𝙷𝚎𝚕𝚙', callback_data='help'),
             InlineKeyboardButton('😊 𝙰𝚋𝚘𝚞𝚝', callback_data='about')
-        ]]
+        ],@Client.on_message(filters.command("availableserial"))
+async def availableserial(bot, message):
+    await message.reply_text(LIST)     
+ 
+AVAILABLESERIAL= """╭━━ Available Serial 😇━
+┣
+┣ Dhruv Tara ➺ 【✅ / ♾】
+┣ Shiv Shakti Shakti【07 / ♾】
+┣ 
+╰━@Entertainment_Official_Bot━━━━"""]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
@@ -84,18 +93,8 @@ async def start(client, message):
             text="**Please Join My Updates Channel to use this Bot!**",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
-            ) 
-        @Client.on_message(filters.command("availableserial"))
-async def availableserial(bot, message):
-    await message.reply_text(LIST)     
- 
-AVAILABLESERIAL= """╭━━ Available Serial 😇━
-┣
-┣ Dhruv Tara ➺ 【✅ / ♾】
-┣ Shiv Shakti Shakti【07 / ♾】
-┣ 
-╰━@Entertainment_Official_Bot━━━━"""
-        return
+        )
+       return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
             InlineKeyboardButton('➕ 𝙰𝚍𝚍 𝙼𝚎 𝚃𝚘 𝚈𝚘𝚞𝚛 𝙶𝚛𝚘𝚞𝚙𝚜 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
